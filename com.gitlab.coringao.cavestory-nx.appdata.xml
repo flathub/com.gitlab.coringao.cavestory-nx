@@ -16,11 +16,13 @@
     <p>Cave Story was originally created by Daisuke "Pixel" Amaya</p>
   </description>
   <screenshots>
-    <screenshot>
+    <screenshot type="default">
       <image type="source">https://gitlab.com/coringao/cavestory-nx/wikis/uploads/6e6f6e19a80f1143c925f6aad69f5bec/cavestory-nx.png</image>
+      <caption>The Title Screen for Cave Story (also known as Doukutsu Monogatari) NX 1.3.0</caption>
     </screenshot>
     <screenshot>
       <image type="source">https://gitlab.com/coringao/cavestory-nx/wikis/uploads/ce544c0a788a8f159b57797f9d8fd9e0/snapEscape.png</image>
+      <caption>A Picture of Cave Story (also known as Doukutsu Monogatari) paused on a screen in which there is a Mimiga (more aptly described as a cute bunny creature) fishing in a small lake, with a orange quilled fish nearby staring blankly at the screen.</caption>
     </screenshot>
   </screenshots>
   <releases>
