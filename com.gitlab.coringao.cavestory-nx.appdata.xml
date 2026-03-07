@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright 2018 Carles Pastor Badosa -->
-<component type="desktop">
+<component type="desktop-application">
   <id>com.gitlab.coringao.cavestory-nx</id>
   <name>Cave Story NX</name>
-  <developer_name>Carlos Donizete Froes</developer_name>
+  <developer id="io.gitlab.coringao">
+    <name>Carlos Donizete Froes</name>
+  </developer>
   <summary>A nostalgic side-action adventure game</summary>
   <metadata_license>FSFAP</metadata_license>
   <project_license>BSD-2-Clause GPL-3.0-or-later </project_license>
-  <url type="homepage">https://gitlab.com/coringao/cavestory-nx/</url>
+  <url type="homepage">https://gitlab.com/coringao/cavestory-nx</url>
+  <url type="bugtracker">https://gitlab.com/coringao/cavestory-nx/issues</url>
+  <url type="vcs-browser">https://gitlab.com/coringao/cavestory-nx</url>
   <launchable type="desktop-id">com.gitlab.coringao.cavestory-nx.desktop</launchable>
   <description>
     <p>Cave Story NX is a nostalgic side-action adventure game to jump and shoot,
