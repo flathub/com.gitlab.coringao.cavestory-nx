@@ -1,43 +1,50 @@
 {
-  "app-id": "com.gitlab.coringao.cavestory-nx",
-  "runtime": "org.freedesktop.Platform",
-  "runtime-version": "25.08",
-  "sdk": "org.freedesktop.Sdk",
-  "command": "cavestory-nx",
-  "finish-args": [
-    "--device=all",
-    "--socket=pulseaudio",
-    "--share=ipc",
-    "--socket=x11"
-  ],
-  "modules": [
-    {
-      "name": "cavestory-nx",
-      "no-make-install": true,
-      "buildsystem": "cmake-ninja",
-      "build-commands": [
-        "install -D cavestory-nx /app/bin/cavestory-nx",
-        "cp -R data /app/bin/data",
-        "install -Dm644 cavestory-nx.desktop /app/share/applications/com.gitlab.coringao.cavestory-nx.desktop",
-        "install -Dm644 data/cavestory-nx.png /app/share/icons/hicolor/512x512/apps/com.gitlab.coringao.cavestory-nx.png",
-        "install -Dm644 com.gitlab.coringao.cavestory-nx.appdata.xml /app/share/appdata/com.gitlab.coringao.cavestory-nx.appdata.xml"
-      ],
-      "sources": [
+    "app-id": "com.gitlab.coringao.cavestory-nx",
+    "runtime": "org.freedesktop.Platform",
+    "runtime-version": "26.08",
+    "sdk": "org.freedesktop.Sdk",
+    "command": "cavestory-nx",
+    "rename-desktop-file": "cavestory-nx.desktop",
+    "rename-icon": "cavestory-nx",
+    "finish-args": [
+        "--device=all",
+        "--socket=pulseaudio",
+        "--share=ipc",
+        "--socket=x11"
+    ],
+    "modules": [
+        "shared-modules/SDL2/SDL2_mixer.json",
         {
-          "type": "git",
-          "url": "https://gitlab.com/coringao/cavestory-nx.git",
-          "tag": "1.3.0",
-          "commit": "30509c41e5b0537acbcee6f0114f91967a5365ec"
-        },
-        {
-          "type": "file",
-          "path": "cavestory-nx.desktop"
-        },
-        {
-          "type": "file",
-          "path": "com.gitlab.coringao.cavestory-nx.appdata.xml"
+            "name": "cavestory-nx",
+            "no-make-install": true,
+            "buildsystem": "cmake-ninja",
+            "//": "A quick fix for: `fatal error: SDL_mixer.h: No such file or directory` error",
+            "config-opts": [
+                "-DCMAKE_CXX_FLAGS=-I/app/include/SDL2"
+            ],
+            "build-commands": [
+                "install -D cavestory-nx /app/bin/cavestory-nx",
+                "cp -R data /app/bin/data",
+                "install -Dm644 cavestory-nx.desktop -t /app/share/applications/",
+                "install -Dm644 data/cavestory-nx.png -t /app/share/icons/hicolor/512x512/apps/",
+                "install -Dm644 com.gitlab.coringao.cavestory-nx.appdata.xml -t /app/share/metainfo/"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://gitlab.com/coringao/cavestory-nx.git",
+                    "tag": "1.3.0",
+                    "commit": "30509c41e5b0537acbcee6f0114f91967a5365ec"
+                },
+                {
+                    "type": "file",
+                    "path": "cavestory-nx.desktop"
+                },
+                {
+                    "type": "file",
+                    "path": "com.gitlab.coringao.cavestory-nx.appdata.xml"
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }
